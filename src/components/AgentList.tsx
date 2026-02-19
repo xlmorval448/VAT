@@ -17,16 +17,28 @@ export const AgentList = () => {
   }, []);
 
   const handleDelete = async (id: string) => {
-    await deleteDoc(doc(db, "agents", id));
+    if (window.confirm("¿Seguro que quieres eliminar este agente?")) {
+      await deleteDoc(doc(db, "agents", id));
+    }
   };
 
   return (
-    <div>
-      <h2>Lista</h2>
+    <div className="agents-grid">
       {agents.map((agent) => (
-        <div key={agent.id}>
-          <p>{agent.name} - {agent.role}</p>
-          <button onClick={() => handleDelete(agent.id!)}>Borrar</button>
+        <div key={agent.id} className="valorant-card">
+          <div className="card-header">
+            <h4>{agent.name}</h4>
+            <p className="card-desc">{agent.description || "Sin descripción"}</p>
+          </div>
+
+          <div className="card-footer">
+            <span className="agent-role badge">{agent.role}</span>
+            <span className="agent-year">{agent.releaseYear}</span>
+          </div>
+
+          <button className="delete-btn-full" onClick={() => handleDelete(agent.id!)}>
+            ELIMINAR AGENTE
+          </button>
         </div>
       ))}
     </div>

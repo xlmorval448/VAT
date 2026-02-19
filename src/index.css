@@ -1,68 +1,174 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    background-color: #12171d;
+    padding: 40px 20px;
+    color: #eceff1;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+div:has(form) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+form {
+    background: #1e242c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 500px;
+    margin: 5%;
+    border-top: 4px solid #ff4655;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+form h3 {
+    margin: 0 0 10px 0;
+    color: #eceff1;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+form input,
+form select,
+form textarea {
+    background-color: #0f1318;
+    color: #eceff1;
+    padding: 14px;
+    border: 2px solid #2a323c;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #5c6b77;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #ff4655;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+form button {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #d6303e;
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.valorant-card {
+    background: #1e242c;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid #ff4655;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%
+}
+
+.valorant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 70, 85, 0.15);
+}
+
+.card-header {
+    padding: 25px 25px 15px;
+    flex-grow: 1;
+}
+
+.card-header h4 {
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #eceff1;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.card-desc {
+    margin: 0;
+    color: #8b97a3;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.card-footer {
+    padding: 15px 25px;
+    background-color: #181e27;
+    border-top: 1px solid #2a323c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background-color: #2a323c;
+    color: #eceff1;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.agent-year {
+    font-weight: 700;
+    color: #ff4655;
+    font-size: 1.1rem;
+}
+
+.delete-btn-full {
+    width: 100%;
+    border: none;
+    background-color: #ff4655;
+    color: white;
+    padding: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    border-radius: 0;
+}
+
+.delete-btn-full:hover {
+    background-color: #0f1318;
 }
