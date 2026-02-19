@@ -1,63 +1,66 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: #12171d;
-    padding: 40px 20px;
     color: #eceff1;
-    margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 20px;
+    min-height: 100vh;
 }
 
-div:has(form) {
+#root {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 40px;
     width: 100%;
+}
+
+.form-container {
+     display: flex;
+     justify-content: center;
+     width: 100%;
 }
 
 form {
     background: #1e242c;
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border-top: 4px solid #ff4655;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
-    border-top: 4px solid #ff4655;
 }
 
 form h3 {
-    margin: 0 0 10px 0;
-    color: #eceff1;
-    text-transform: uppercase;
     text-align: center;
-    font-weight: 800;
+    color: #ff4655;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 form input,
 form select,
 form textarea {
     background-color: #0f1318;
-    color: #eceff1;
-    padding: 14px;
     border: 2px solid #2a323c;
+    color: #eceff1;
+    padding: 12px;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 16px;
     font-family: inherit;
-    transition: border-color 0.3s;
     outline: none;
     width: 100%;
-}
-
-form input::placeholder,
-form textarea::placeholder {
-    color: #5c6b77;
+    transition: border-color 0.3s;
 }
 
 form input:focus,
@@ -74,14 +77,13 @@ form textarea {
 form button {
     background-color: #ff4655;
     color: white;
+    padding: 15px;
     border: none;
-    padding: 16px;
     border-radius: 4px;
     font-size: 16px;
-    cursor: pointer;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    cursor: pointer;
     transition: background-color 0.2s;
     width: 100%;
 }
@@ -92,105 +94,74 @@ form button:hover {
 
 .agents-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
     width: 100%;
 }
 
 .valorant-card {
     background: #1e242c;
-    border-radius: 6px;
+    border-radius: 8px;
+    border-left: 4px solid #ff4655;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    border-left: 5px solid #ff4655;
-    transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: space-between;
     height: 100%;
-}
-
-.valorant-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(255, 70, 85, 0.15);
+    margin-top: 5%;
 }
 
 .card-header {
-    padding: 25px 20px 15px;
+    padding: 20px;
     flex-grow: 1;
 }
 
 .card-header h4 {
-    margin: 0 0 12px 0;
-    font-size: 1.5rem;
+    color: #ff4655;
     text-transform: uppercase;
-    color: #eceff1;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .card-desc {
-    margin: 0;
     color: #8b97a3;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .card-footer {
-    padding: 15px 20px;
     background-color: #181e27;
-    border-top: 1px solid #2a323c;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.badge {
-    background-color: #2a323c;
-    color: #eceff1;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.agent-year {
-    font-weight: 700;
-    color: #ff4655;
-    font-size: 1.1rem;
+    border-top: 1px solid #2a323c;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .delete-btn-full {
     width: 100%;
     border: none;
-    background-color: #ff4655;
+    background-color: #d32f2f;
     color: white;
-    padding: 15px;
-    font-weight: 800;
+    padding: 12px;
+    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.2s;
     font-size: 0.9rem;
-    border-radius: 0;
 }
 
 .delete-btn-full:hover {
-    background-color: #0f1318;
+    background-color: #b71c1c;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     body {
-        padding: 20px 15px;
+        padding: 10px;
     }
-    
-    form {
-        padding: 20px;
-    }
-
     .agents-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
     }
 }
