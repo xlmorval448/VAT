@@ -1,73 +1,15 @@
-# React + TypeScript + Vite
+# Valorant Agent Tracker (VAT)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción de la aplicación
+Esta es una aplicación web de una sola página (SPA) diseñada para registrar y gestionar personajes (agentes) del videojuego Valorant. 
 
-Currently, two official plugins are available:
+El propósito de la aplicación es ofrecer una interfaz donde los usuarios puedan añadir nuevos agentes especificando sus datos principales (nombre, rol, año de lanzamiento y una breve descripción). La aplicación permite realizar una gestión básica (añadir, listar y eliminar personajes) almacenando toda la información de forma persistente en la nube utilizando Firebase Firestore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías de estilo
+Para el diseño visual de la aplicación he utilizado **CSS nativo** puro. 
+He creado una hoja de estilos propia imitando la estética oscura, los acentos en color rojo y el aspecto "gaming" característico del propio juego Valorant y de plataformas de estadísticas como Tracker.gg, utilizando Flexbox y CSS Grid para asegurar que el diseño sea completamente responsivo.
 
-## React Compiler
+## Enlace de Despliegue
+El proyecto ha sido desplegado exitosamente utilizando Vercel. Puedes acceder a la aplicación funcionando en vivo a través del siguiente enlace:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🔗 **[https://vat-two.vercel.app/](https://vat-two.vercel.app/)**
